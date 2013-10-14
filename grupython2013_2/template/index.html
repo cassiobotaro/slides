@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Grupython 2013/2</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='../slides.js'></script>
+  </head>
+
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+
+
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+
+      <article class='fill'>
+        <p>
+          <img src='images/logo_grupython.png'>
+        </p>
+      </article>
+
+      <article>
+        <h1>
+          Grupython UFLA
+          <br>
+          2013/2
+        </h1>
+        <p>
+          Cássio Botaro "Skin"
+          <br>
+          15 de Outubro de 2013
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Quem sou eu?
+        </h3>
+            <div style="text-align:center">
+           <img style="height:200px"  src='images/foto.png'>
+           </div>
+          <ul style="margin:0;padding:80px 0 0 0;">
+            <a href="https://www.facebook.com/grupython.ufla?fref=ts" target="_blank"><img style="height:150px;width:150px;" src='images/gp.png'></a>
+            <img style="height:150px;width:150px;" src='images/ifmg.png'>
+            <a href="http://python-mg.github.com/" target="_blank"><img style="height:150px;width:150px;" src='images/pymg.png'></a>
+            <img style="height:150px;width:150px;" src='images/oss.png'>
+            <img style="height:150px;width:150px;" src='images/linux.png'>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Bem vindos! Sabem Programar?
+        </h3>
+        <p>
+          <img style='height: 500px' src='images/hacker2.jpg'>
+        </p>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          Um pouco de história...
+        </h3>
+        <p>
+          <img src='images/historia.jpg'>
+        </p>
+      </article>
+
+      <article>
+          <img src="images/Guido_van_Rossum.jpg" style="float:right;padding:20px">
+            <ul>
+              <li>Criada por Guido van Rossum</li>
+              <li>Surgiu em 1990</li>
+              <li>Baseado em Algol 68, C, Modula-3, ABC e outras.</li>
+              <li>Nome baseado na série Monty Python's Flying Circus</li>
+              <li>BDFL trabalha para Dropbox</li>
+              <li>Licença compatível com software livre</li>
+              <li>Ainda em produção</li>
+            </ul>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          Por que python?
+        </h3>
+        <p>
+          <img src='images/why.jpg'>
+        </p>
+      </article>
+
+    <article>
+        <h4>Produtividade em menor tempo</h4>
+        <img src='images/jack.png'>
+    </article>
+
+    <article>
+        <h4>Estrutura de dados de alto nível</h4>
+        <pre>
+            # números complexos
+            complexo = 3 + 4j
+
+            # conjunto heterogêneo de dados
+            lista = ["string", 4, 3.2, [1,2], {"chave":"valor"}]
+
+            # 2 em decimal
+            binario = 0b10
+
+            # 16 em decimal
+            hex = 0x10
+
+            # Verdadeiro ou falso
+            booleano = True
+        </pre>
+
+    </article>
+
+    <article>
+        <h4>Tipagem dinamica(mas forte)</h4>
+        <pre>
+            [] + {}
+
+            {} + [] # WAT?
+
+            1 + {} # WAT?
+
+            1 + 'string' # WAT?
+
+            {} + {} # WAT???
+
+            [] + [] # a string?! WAT?
+
+            3 * 'Nan' + 'Batman!' # única exceção
+        </pre>
+    </article>
+
+      <article>
+            <h5 style="padding:0;margin:0">Organizado,sem chateação de ponto e virgula e legível.</h5>
+            <pre style="margin:0">
+# coding:utf-8
+import time
+import tkinter
+'''Código baseado em uma palestra Ministrada por Luciano Ramalho.'''
+app = tkinter.Tk()
+app.title("Meu primeiro relógio")
+hora = tkinter.StringVar()
+hora.set('00:00:00')
+rel = tkinter.Label(app, font='Helvetica 120', textvariable=hora)
+rel.pack()
+
+def tic_tac():
+    '''Atualiza a hora com hora atual do sistema'''
+    hora_atual = time.strftime('%H:%M:%S')
+    if hora_atual != hora.get():
+        hora.set(hora_atual)
+    rel.after(100, tic_tac)
+
+tic_tac()
+app.mainloop()
+            </pre>
+
+      </article>
+
+      <article>
+        <h3>
+          Comunidade
+        </h3>
+        <p>
+          <img class='centered' style='height: 480px' src='images/comunidade.jpg'>
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Comunidade feliz
+        </h3>
+        <p>
+          <img class='centered' style='height: 480px' src='images/comunidade_feliz.jpg'>
+        </p>
+      </article>
+
+      <article>
+          <h4>Roda no windows, no MAC e no Linux</h4>
+          <img style="height:250px;width:250px;" src='images/windows.jpg'>
+          <img style="height:250px;width:250px;" src='images/linux.png'>
+          <img style="height:250px;width:250px;" src='images/apple.png'>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          O que falam do python?
+        </h3>
+        <p>
+          <img src='images/silly.jpg'>
+        </p>
+      </article>
+
+      <article>
+            <img src="images/Eckel.jpg" style="float:right;padding:20px">
+            <q style="font-size:1em">A vida é melhor sem chaves.</q>
+            <q style="font-size:1em">Python me ajuda a focar nos meus conceitos em vez de brigar com a linguagem.</q>
+            <br>
+            <p> - Bruce Eckel - autor do Thinking in C++ e Thinking in Java</p>
+      </article>
+
+      <article>
+            <img src="images/Norvig.jpg" style="float:right;padding:20px">
+            <q style="font-size:0.8em">Python tem sido uma parte importante do Google
+            desde o início, e pernanece assim conforme o sistema cresce e evolui. Hoje dezenas de engenheiros do Google utilizam Python, e estamos procurando por mais pessoas com conhecimento nesta linguagem.</q>
+            <p style="font-size:x-large">Peter Norvig - Diretor de Qualidade de busca do Google Inc.</p>
+      </article>
+
+
+    <article>
+      <img src="images/Eric.jpg" style="float:right;padding:20px">
+      <q style="font-size:xx-large">Python é entre todas as linguagens que eu aprendi a que menos interfere entre mim e o problema, é a mais efetiva para traduzir pensamento em ações.</q>
+      <p>Eric Raymond - Hacker</p>
+    </article>
+
+    <article>
+          <img src="images/Alex.jpg" style="float:right;padding:20px">
+          <q style="font-size:1em">[...]Nossa filosofia aqui é "Python sempre que pudermos, C++ se necessário."</q>
+          <p>Alex Martelli - Desenvolvedor Python</p>
+    </article>
+
+    <article class='fill'>
+      <h3>
+        Mas e no mundo real?
+      </h3>
+      <p>
+        <img src='images/talk_about.jpg'>
+      </p>
+    </article>
+
+    <article class='fill'>
+      <h3>
+        Automação Residencial e robótica
+      </h3>
+      <p>
+        <img src='images/arduino.jpg'>
+      </p>
+    </article>
+
+    <article>
+    <pre style="margin:0  80px 0 0;padding:0;font-size:0.5em">
+#! /usr/bin/env python
+import serial
+porta = '/dev/ttyUSB0'
+baud_rate = 9600
+obj_porta = serial.Serial(porta, baud_rate)
+def escrever_porta():
+   try:
+       valor = (raw_input("Digite 1 para ligar o led.\
+       \nDigite 2 para desligar o led.\n"))
+       obj_porta.write(valor)
+       ler_porta()
+       obj_porta.close()
+   except serial.SerialException:
+       print"ERRO: Verifique se ha algum dispositivo conectado na porta!"
+def ler_porta():
+   try:
+       valor = obj_porta.readline()
+       print"Arduino disse: ",valor
+       obj_porta.close()
+   except serial.SerialException:
+       print"ERRO: Verifique se ha algum dispositivo conectado na porta!"
+
+escrever_porta()
+      </pre>
+
+    </article>
+    <article class='fill'>
+      <h3>
+        Games
+      </h3>
+      <p>
+        <img src='images/battlefield.jpg'>
+      </p>
+    </article>
+
+
+    <article>
+        <ul>
+            <li style="font-size:1em">Metin 2</li>
+            <li style="font-size:1em">Battlefield 2 ( em algumas partes ) </li>
+            <li style="font-size:1em">Battlefield Heroes ( scripts python )</li>
+            <li style="font-size:1em">Frets on Fire</li>
+            <li style="font-size:1em">Civilization IV</li>
+            <li style="font-size:1em">EVE Online</li>
+        </ul>
+        <img style="height:350px;width:680px" src="images/metin2.jpg" alt="metin2">
+    </article>
+
+    <article class='fill'>
+      <h3>
+        Aplicações Web
+      </h3>
+      <p>
+        <img src='images/cartola.jpg'>
+      </p>
+    </article>
+
+
+<article>
+    <h4>Hello World Bottle</h4>
+    <pre>
+#! /usr/bin/env python
+from bottle import route, run, template
+
+@route('/')
+def index():
+    return "Hello World Bottle"
+
+@route('/hello/<name>')
+def index(name='World'):
+    return template('<b>Hello {{name}}</b>!', name=name)
+
+run(host='localhost', port=8080)
+    </pre>
+</article>
+
+
+
+<article>
+
+        <h4>Quem utiliza?</h4>
+        <img style="height:150px;width:200px;" src='images/google.png'>
+        <img style="height:150px;width:150px;" src='images/nasa.png'>
+        <img style="height:150px;width:200px;" src='images/ilm.jpg'>
+        <img style="height:150px;width:200px;" src='images/globo.png'>
+        <img style="height:150px;width:200px;" src='images/dropbox.png'>
+        <img style="height:150px;width:200px;" src='images/pinterest.png'>
+        <img style="height:150px;width:200px;" src='images/federal.jpg'>
+        <img style="height:150px;width:200px;" src='images/CIA.jpg'>
+        <img style="height:150px;width:200px;" src='images/FBI.png'>
+        <img style="height:150px;width:200px;" src='images/disney.jpg'>
+
+      </article>
+
+          <article class='fill'>
+        <h3>
+          Perguntas Frequentes
+        </h3>
+        <p>
+          <img src='images/faq.jpg'>
+        </p>
+      </article>
+
+      <article>
+          <h1 style="text-align:center">Por onde começo ?!?!</h1>
+          <div style="text-align:center;"><a href="https://github.com/cassiobotaro/my_sublime">Qual IDE utilizar?</a></div>
+      </article>
+
+      <article>
+          <h1 style="text-align:center">Hello World!</h1>
+          <pre>
+            import __hello__
+
+            import antigravity
+          </pre>
+      </article>
+
+      <article>
+        <h1>Python 2 ou 3 ?!?!</h1>
+      </article>
+
+    <article>
+          <h1 style="text-align:center">Por Favor e Obrigado</h1>
+          <h3 style="color:blue;text-align:center">dir e help</h3>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          Por onde começo?<span style="color:red">Python For Zombies!!!</span>
+        </h3>
+        <p>
+          <a href="http://pingmind.com/python-para-zumbis/" target="_blank"><img src='images/massanori.jpg'></a>
+        </p>
+      </article>
+
+    <article class='fill'>
+        <h3>
+          Mas não tem defeitos?
+        </h3>
+        <p>
+          <img src='images/problemas.jpg'>
+        </p>
+      </article>
+
+
+      <article class='fill'>
+        <h3 style="color:red">
+          Python é lento!!!
+        </h3>
+        <p>
+          <img src='images/fuuu.png'>
+        </p>
+      </article>
+
+
+      <article class='fill'>
+        <h3>
+          Apenas um arranhão!
+        </h3>
+        <p>
+          <img src='images/montypython.jpg'>
+        </p>
+      </article>
+
+    <article>
+          <img src="images/cuong.png" style="float:right;padding:20px">
+          <q style="font-size:x-large">Python é rápido suficiente para o nosso site e nos permite produzir características de fácil manutenção em tempos recordes, com um mínimo de desenvolvedores.</q>
+          <p>Cuong Do, Arquiteto de software, Youtube.com</p>
+    </article>
+
+      <article style="background:blue">
+        <p style="text-align:center">
+          <img src='images/keep_calm.png'>
+        </p>
+      </article>
+
+      <article>
+        <h1>Dúvidas ?!?!?</h1>
+      </article>
+
+      <article>
+        <h3>
+          Obrigado!!
+        </h3>
+        <p>
+          <img class='centered' style='height: 400px' src='images/fred-mercury-rage-meme.png'>
+        </p>
+      </article>
+
+      <article>
+        <h4>Contatos:</h4>
+          <a href="https://twitter.com/cassiobotaro"><img style="height:200px;width:200px;" src='images/twitter.png'></a>
+          <a href="https://plus.google.com/115526873231171443807/posts"><img style="height:200px;width:200px;" src='images/gplus.png'></a>
+          <a href="https://github.com/cassiobotaro"><img style="height:200px;width:200px;" src='images/github.png'></a>
+          <a href="https://www.facebook.com/cassio.botaro"><img style="height:200px;width:200px;" src='images/facebook.png'></a>
+          <a href="https://groups.google.com/forum/#!forum/python-mg"><img style="height:200px;width:200px;" src='images/pymg.png'></a>
+      </article>
+
+    </section>
+  </body>
+</html>
