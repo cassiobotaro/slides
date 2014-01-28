@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Introdução ao python</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='../slides.js'></script>
+  </head>
+
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+
+
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+
+      <article class='fill'>
+        <p>
+          <img src='images/logo_grupython.png'>
+        </p>
+      </article>
+
+      <article>
+        <h1>
+          Introdução ao <strike>Pytohn</strike> Python
+        </h1>
+        <p>
+          Cássio Oliveira Botaro
+          <br>
+          25 de Janeiro de 2014
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Quem sou eu?
+        </h3>
+            <div style="text-align:center">
+           <img style="height:200px"  src='images/foto.png'>
+           </div>
+          <ul style="margin:0;padding:80px 0 0 0;">
+            <a href="https://www.facebook.com/grupython.ufla?fref=ts" target="_blank"><img style="height:150px;width:150px;" src='images/gp.png'></a>
+            <img style="height:150px;width:150px;" src='images/ifmg.png'>
+            <a href="http://python-mg.github.com/" target="_blank"><img style="height:150px;width:150px;" src='images/pymg.png'></a>
+            <img style="height:150px;width:150px;" src='images/oss.png'>
+            <img style="height:150px;width:150px;" src='images/linux.png'>
+        </ul>
+      </article>
+      <article class='fill'>
+        <h3>
+          Evangelista Python
+        </h3>
+        <p>
+          <img src='images/pastor_metralhadora.png'>
+        </p>
+      </article>
+      <article class='fill'>
+          <h3>
+            Perguntas Frequentes
+          </h3>
+          <p>
+            <img src='images/faq.jpg'>
+          </p>
+        </article>
+
+        <article>
+            <h1 style="text-align:center">Por onde começo ?!?!</h1>
+            <div style="text-align:center;"><a href="https://github.com/cassiobotaro/my_sublime">Qual IDE utilizar?</a></div>
+        </article>
+
+        <article>
+            <h1 style="text-align:center">Hello World!</h1>
+            <pre>
+              import __hello__
+
+              import antigravity
+            </pre>
+        </article>
+
+        <article>
+          <h1>Python 2 ou 3 ?!?!</h1>
+        </article>
+
+      <article>
+            <h1 style="text-align:center">Por Favor e Obrigado</h1>
+            <h3 style="color:blue;text-align:center">dir e help</h3>
+        </article>
+
+        <article class='fill'>
+          <h3>
+            Por onde começo?<span style="color:red">Python For Zombies!!!</span>
+          </h3>
+          <p>
+            <a href="http://pingmind.com/python-para-zumbis/" target="_blank"><img src='images/massanori.jpg'></a>
+          </p>
+        </article>
+
+
+
+      <article class='fill'>
+        <h3>
+          Por que python?
+        </h3>
+        <p>
+          <img src='images/why.jpg'>
+        </p>
+      </article>
+
+    <article>
+        <h4>Produtividade em menor tempo</h4>
+        <img src='images/jack.png'>
+    </article>
+
+    <article>
+        <h3>Por que sou apyxonado <3 </h3>
+        <ul>
+            <li>Sintaxe simples</li>
+            <li>Identação define blocos de código</li>
+            <li>Baterias incluídas</li>
+            <li>Nada de ;</li>
+            <li>Escreve pouco, faz muito</li>
+            <li>Utilizada em várias áreas</li>
+            <li>Python é software livre</li>
+            <li>Tipos básicos poderosos e simples de usar</li>
+            <li>REPL (Read - Eval -Print Loop)</li>
+        </ul>
+    </article>
+
+      <article>
+        <h3>
+          Comunidade
+        </h3>
+        <p>
+          <img class='centered' style='height: 480px' src='images/comunidade.jpg'>
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Comunidade feliz
+        </h3>
+        <p>
+          <img class='centered' style='height: 480px' src='images/comunidade_feliz.jpg'>
+        </p>
+      </article>
+
+      <article>
+          <h4>Roda no windows, no MAC e no Linux</h4>
+          <img style="height:250px;width:250px;" src='images/windows.jpg'>
+          <img style="height:250px;width:250px;" src='images/linux.png'>
+          <img style="height:250px;width:250px;" src='images/apple.png'>
+      </article>
+
+        <article class='fill'>
+        <h3>
+          Talk is cheap. Show me the code!
+        </h3>
+        <p>
+          <img src='images/linus-torvalds.jpg'>
+        </p>
+      </article>
+
+      <article>
+    <h4>Sorteio de nomes</h4>
+    <pre>
+#! /usr/bin/env python
+from random import choice
+
+nomes = "Cássio Carla Wagner Thiago Pedro Lucas Mário João".split()
+print choice(nomes)
+    </pre>
+</article>
+
+      <article>
+            <h5 style="padding:0;margin:0">Interface Gráfica</h5>
+            <pre style="margin:0">
+# coding:utf-8
+import time
+import tkinter
+'''Código baseado em uma palestra Ministrada por Luciano Ramalho.'''
+app = tkinter.Tk()
+app.title("Meu primeiro relógio")
+hora = tkinter.StringVar()
+hora.set('00:00:00')
+rel = tkinter.Label(app, font='Helvetica 120', textvariable=hora)
+rel.pack()
+
+def tic_tac():
+    '''Atualiza a hora com hora atual do sistema'''
+    hora_atual = time.strftime('%H:%M:%S')
+    if hora_atual != hora.get():
+        hora.set(hora_atual)
+    rel.after(100, tic_tac)
+
+tic_tac()
+app.mainloop()
+            </pre>
+
+      </article>
+
+
+
+<article>
+    <h4>Aplicativo WEB</h4>
+    <pre>
+#! /usr/bin/env python
+from bottle import route, run, template
+
+@route('/')
+def index():
+    return "Hello World Bottle"
+
+@route("/hello/<name>")
+def index(name='World'):
+    return template('<b>Hello {{name}}</b>!', name=name)
+
+run(host='localhost', port=8080)
+    </pre>
+</article>
+
+<article>
+    <h4 style="padding:0;margin:0">Kivy - Mobilidade em python</h4>
+    <pre style="margin:0">
+from kivy.app import App
+
+from kivy.uix.scatter import Scatter
+from kivy.uix.label import Label
+from kivy.uix.floatlayout import FloatLayout
+
+
+class TutorialApp(App):
+    def build(self):
+        f = FloatLayout()
+        s = Scatter()
+        l = Label(text="Hello!",font_size=150)
+
+        f.add_widget(s)
+        s.add_widget(l)
+
+        return f
+
+if __name__ == '__main__':
+     TutorialApp().run()
+    </pre>
+</article>
+
+
+
+<article>
+    <h5 style="padding:0;margin:0">Python 3</h5>
+    <pre style="margin:0" >
+#!/usr/bin/env python3
+def Σ(lim_inf, lim_sup, funcao):
+    '''Um somatório é um operador matemático que nos permite
+representar facilmente somas de um grande número de termos,
+até infinitos.
+É representado com a letra grega sigma ( \Sigma ).
+Uma variável i chamada índice do somatório recebe como valor inicial o
+limite inferior(lim_inf).A
+Esta variável percorre os valores inteiros até alcançar o limite
+superior(lim_sup).
+A cada iteração uma função(funcao) é executada sobre o índice do
+somatório.
+A função de entrada (funcao) deve receber um valor de entrada e retornar
+um valor de saída.
+
+Σ(1,5,lambda x:x) = 1 + 2 + 3 + 4 + 5 = 15
+
+>>> Σ(1,5,lambda x:x)
+15
+    '''
+    return sum([funcao(i) for i in range(lim_inf, lim_sup + 1)])
+    </pre>
+</article>
+<article>
+    <h5 style="padding:0;margin:0">Brincando com JSON</h5>
+    <h6 style="margin:0;margin-top:5px">De Python para JSON</h6>
+    <pre style="margin:0" >
+import json
+
+json_file = json.dumps({'palestra': '{json:the killer}',
+'palestrante': 'cassiobotaro', 'numero': 08 })
+
+print json_file
+    </pre>
+    <h6 style="margin:0;margin-top:5px;">De JSON para Python</h6>
+    <pre style="margin:0">
+import json
+import urllib
+
+content = urllib.urlopen('http://api.icndb.com/jokes/random').read()
+
+json_file = json.loads(content.decode('utf-8'))
+print json_file
+    </pre>
+</article>
+
+      <article style="background:blue">
+        <p style="text-align:center">
+          <img src='images/keep_calm.png'>
+        </p>
+      </article>
+
+      <article class='fill'>
+        <h3>
+            Dúvidas ?!?!
+        </h3>
+        <p>
+          <img src='images/talk_about.jpg'>
+        </p>
+    </article>
+
+    <article class='fill'>
+        <h3>
+          Sempre veja o lado pythonico da vida
+        </h3>
+        <p>
+          <img src='images/silly.jpg'>
+        </p>
+    </article>
+    <article style="background-color:black">
+        <img style="margin-top:20px;height:500px" src="images/sentibol_wallpapper.jpg" alt="sentibol">
+        <h3 style="color:white">Em breve...</h3>
+    </article>
+
+
+
+      <article>
+        <h3>
+          Obrigado!!
+        </h3>
+        <p>
+          <img class='centered' style='height: 400px' src='images/fred-mercury-rage-meme.png'>
+        </p>
+      </article>
+
+      <article>
+        <h4>Contatos:</h4>
+          <a href="https://twitter.com/cassiobotaro"><img style="height:200px;width:200px;" src='images/twitter.png'></a>
+          <a href="https://plus.google.com/115526873231171443807/posts"><img style="height:200px;width:200px;" src='images/gplus.png'></a>
+          <a href="https://github.com/cassiobotaro"><img style="height:200px;width:200px;" src='images/github.png'></a>
+          <a href="https://www.facebook.com/cassio.botaro"><img style="height:200px;width:200px;" src='images/facebook.png'></a>
+          <a href="https://groups.google.com/forum/#!forum/python-mg"><img style="height:200px;width:200px;" src='images/pymg.png'></a>
+      </article>
+
+    </section>
+  </body>
+</html>
