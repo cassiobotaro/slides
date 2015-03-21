@@ -1,0 +1,402 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="fill nobackground logoslide" style="background-image: url(images/veiculos.png)">
+  </slide>
+
+
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/logo_fundo_transparente.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/myprecious.jpg)">
+    <h2 class="white">Como é visto python 2</h2>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/logo_fundo_transparente.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Python 3</h2>
+      <h3>Uma breve contextualização</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/historia.jpg)">
+    <h2 class="white">Um pouco de história</h2>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>História do python 3</h2>
+    </hgroup>
+    <article>
+      <ul class="build fade">
+        <li>Foi lançada em 2008</li>
+        <li>Não compatível com Python 2</li>
+        <li>Mais baterias incluídas (asyncio, ensurepip, enum, statistics)</li>
+        <li>Correção de nomeclaturas
+            <ul>
+                <li>Módulos em letras minúsculas</li>
+            </ul>
+        </li>
+        <li>Outras mudanças:
+            <ul>
+                <li>print agora é uma função</li>
+                <li>long e int unificados</li>
+                <li>bytes e strings separados</li>
+                <li>Divisão não faz mais coerção de tipo</li>
+                <li>True e False são palavras reservadas</li>
+            </ul>
+        </li>
+        <li>Muitas bibliotecas incluem suporte</li>
+        <li>Django, Flask, nltk, scikit-learn, numpy, scipy, etc.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/frodo.jpg)">
+    <h2 class="white">Já tem data para "terminar"</h2>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/code2.jpg)">
+    <h2 class="white">Um pouco de código</h2>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Desempacotamento</h2>
+      <h3>head, tail and rest</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="python">
+        head, *rest, tail = range(10)
+        print(head)
+        # retorna 0
+        print(tail)
+        # retorna 9
+        print(rest)
+        # retorna [1, 2, 3, 4, 5, 6, 7, 8]
+        *rest, tail = range(5)
+        print(rest)
+        # retorna [0, 1, 2, 3]
+        print(tail)
+        # retorna 4
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Iteradores em todo lugar!</h2>
+      <h3>Sem mais Xtudo ou iterlista</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="python">
+        print(range(10))
+        # retorna range(0, 10)
+        # não é mais uma lista
+        # se comporta como xrange do python 2
+        for numero in range(10):
+            print(numero, endp=" ")
+        # 0 1 2 3 4 5 6 7 8 9
+        dic = {"chaveA": 1, "chaveB": 2, "chaveC": 3}
+        dic.keys()
+        # retorna dict_keys(['chaveB', 'chaveC', 'chaveA'])
+        # visão com os valores das chaves do dicionário
+        for (chave, valor) in dic.items():
+            print(chave, valor)
+        # chaveB 2
+        # chaveC 3
+        # chaveA 1
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Comparações</h2>
+      <h3>Tipificação em comparadores</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="python">
+        # No Python 2
+        'abc' > 1
+        # True
+        None < 0
+        # True
+
+        # No Python 3
+        'abc' > 1
+        # TypeError: unorderable types: str() > int()
+        None < 0
+        # TypeError: unorderable types: NoneType() < int()
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>String dividida em bytes e unicode</h2>
+      <h3>Agora é possivél utilizar de acentos</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="python">
+        def Σ(lim_inf, lim_sup, funcao):
+            '''Um somatório é um operador matemático que nos permite
+        representar facilmente somas de um grande número de termos,
+        até infinitos.
+        É representado com a letra grega sigma ( \Sigma ).
+        Uma variável i chamada índice do somatório recebe como valor inicial o
+        limite inferior(lim_inf).A
+        Esta variável percorre os valores inteiros até alcançar o limite
+        superior(lim_sup).
+        A cada iteração uma função(funcao) é executada sobre o índice do
+        somatório.
+        A função de entrada (funcao) deve receber um valor de entrada e retornar
+        um valor de saída.
+
+        Σ(1,5,lambda x:x) = 1 + 2 + 3 + 4 + 5 = 15
+
+        >>> Σ(1,5,lambda x:x)
+        15
+            '''
+            return sum([funcao(i) for i in range(lim_inf, lim_sup + 1)])
+        π = math.pi
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>String dividida em bytes e unicode</h2>
+      <h3>Agora é possivel utilizar de acentos</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="python">
+        # python 2
+        nome ='cássio'
+        nome
+        # 'c\xc3\xa1ssio
+        bytes('cássio')
+        # 'c\xc3\xa1ssio
+        # bytes e strings são a mesma coisa
+        nome = u'cássio'
+        # u'c\xe1ssio'
+        # unicode é diferente
+
+
+        # python 3
+        nome ='cássio'
+        nome
+        # 'cássio'
+        bytes('cássio', encoding='utf-8')
+        # b'c\xc3\xa1ssio'
+        # bytes e strings são coisas distintas
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>E mais uma infinidade de recursos</h2>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="python">
+        # set comprehension
+        {value for value in something}
+
+        # dict comprehension
+        {key:value for key,value in something}
+
+        # 3/2 agora retorna 1.5
+
+        # notação para numeros em base oito e desesseis
+        # 0o99
+        # 0x44
+
+        # Não dá mais pra trolar amigos
+        True, False = False,True
+        # SyntaxError: can't assign to keyword
+
+        # a partir do python 3.4
+        from statistics import mean, median, mode
+
+        # asyncio
+        # aqui uma utilização interessante
+        # http://compiletoi.net/fast-scraping-in-python-with-asyncio.html
+      </pre>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/logo_fundo_transparente.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Baterias incluídas</h2>
+      <h3>Lá e de volta outra vez</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/bilbo.jpg)">
+    <h2 class="white">Vamos a uma longa jornada</h2>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Módulo executável</h2>
+      <h3>Canivete suiço dos programadores</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="bash">
+        # criação de um ambiente virtual
+        python -m venv /path/to/&lt;my_venv&gt;
+        # ubuntu apresenta problemas, nele utilize
+        python -m venv --without-pip /path/to/&lt;my_venv&gt;
+        # ativação deste ambiente
+        source /path/to/&lt;my_venv&gt;/bin/activate
+
+        # PYTHONPATH
+        python -m site
+
+        # Servidor http python
+        python -m http.server [port]
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h3>...</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="bash">
+
+        # Documentação
+        python -m pydoc
+        # b para abrir documentação no browser
+        python -m pydoc -b
+        # ou especifique o módulo
+        python -m pydoc math.sin
+
+        # debug estilo gdb
+        python -m pdb &lt;nomedoprograma.py&gt;
+
+        # profiler
+        python -m profile &lt;nomedoprograma.py&gt;
+
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h3>.</h3>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="bash">
+
+        #exibe um calendario
+        python -m calendar
+
+        # recebe entrada json e imprime
+        python -m json.tool
+
+        # codifica e decodifica um texto em base64
+        echo 'Hello World' | python -m base64 -e
+        echo 'SGVsbG8gV29ybGQK' | python -m base64 -d
+      </pre>
+    </article>
+  </slide>
+
+
+
+  <slide class="fill nobackground" style="background-image: url(images/bilbo-end.jpg)">
+    <h2 class="white">Termina a nossa jornada</h2>
+  </slide>
+
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/logo_fundo_transparente.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+
+            <q>
+            Seu lar ficou para trás agora. O mundo está à sua frente.
+            </q>
+      <div class="author">
+        Gandalf<br>
+        O Cinzento
+      </div>
+    </article>
+  </slide>
+
+
+  <slide class="fill nobackground logoslide" style="background-image: url(images/precious.jpg)">
+    <a href="https://caniusepython3.com/">
+        <h2 class="white">Dúvidas?!?!</h2>
+    </a>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/logo_fundo_transparente.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Obrigado!&gt;</h2>
+      <p>Vamos trocar um dedo de prosa!</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
