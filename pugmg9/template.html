@@ -1,0 +1,312 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="fill nobackground logoslide" style="background-image: url(images/veiculos.png)">
+  </slide>
+
+
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/logo_fundo_transparente.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/magica.jpg)">
+    <h2 class="white">Consideração</h2>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/logo_fundo_transparente.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Web2py</h2>
+      <h3>Sobre o framework</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Detalhes do framework</h2>
+    </hgroup>
+    <article>
+      <ul class="build fade">
+        <li>Foi lançada em 2007</li>
+        <li>Não possui suporte a python 3</li>
+        <li>Baterias incluídas
+            <ul>
+                <li>sms_utils</li>
+                <li>stripe</li>
+                <li>fpdf</li>
+            </ul>
+        </li>
+        <li>Outras características:
+            <ul>
+                <li>seguro</li>
+                <li>portavel</li>
+                <li>fácil aprendizado</li>
+            </ul>
+        </li>
+        <li>Programadores se preocupam com o mais importante:</li>
+        <li>Algoritmos!</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/logo_fundo_transparente.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Hello World</h2>
+      <h3>Uma aplicação mínima</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Controller</h2>
+      <h3>controllers/</h3>
+      <h4>|---- default.py</h4>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="bash">
+        cd applications
+        mkdir hello
+        cd hello
+        mkdir models
+        mkdir views
+        mkdir controllers
+      </pre>
+      <pre class="prettyprint" data-lang="python">
+        def index():
+            return 'Hello World'
+      </pre>
+    </article>
+    <p>http://127.0.0.1:8000/hello</p>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/logo_fundo_transparente.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Blog</h2>
+      <h3>Nosso segundo hello world</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Model</h2>
+      <h3>models/</h3>
+      <h4>|---- db.py</h4>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="python">
+        db.define_table(
+            'categoria',
+            Field('nome')
+        )
+        db.define_table(
+           'post',
+           Field('titulo', notnull=True),
+           Field('slug'),
+           Field('conteudo', 'text'),
+           Field('publicado', 'boolean'),
+           Field('tags', 'list:string'),
+           Field('categoria', 'list:reference categoria'),
+           auth.signature
+        )
+        db.post.slug.compute = lambda registro:IS_SLUG()(registro.titulo)[0]
+        db.post.categoria.requires = IS_IN_DB(db, 'categoria.id', '%(nome)s', multiple=True)
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Controller</h2>
+      <h3>controllers/</h3>
+      <h4>|---- default.py</h4>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="python">
+        def index():
+            posts = db(db.post).select()
+            return {'posts':posts}
+      </pre>
+      <p>http://127.0.0.1:8000/blog</p> ou
+      <p>http://127.0.0.1:8000/blog/default/index.json</p> ou
+      <p>http://127.0.0.1:8000/blog/default/index.xml</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>View</h2>
+      <h3>views/</h3>
+      <h3>|----views/</h3>
+      <h4>     |----default.html</h4>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="html">
+        {{extend 'layout.html'}}
+        &lt;table class="table">
+            &lt;tr>
+                &lt;th>Titulo&lt;/th>
+                &lt;th>Conteudo&lt;/th>
+                &lt;th>Status&lt;/th>
+                &lt;th>Tag&lt;/th>
+                &lt;th>Categoria&lt;/th>
+            &lt;/tr>
+            {{for post in posts:}}
+                &lt;tr>
+                    &lt;td>&lt;a href="{{=URL('post', 'show', args=post.slug)}}">{{=post.titulo}}&lt;/a>&lt;/td>
+                    &lt;td>{{=post.conteudo}}&lt;/td>
+                    &lt;td>{{=post.publicado}}&lt;/td>
+                    &lt;td>{{=post.tags}}&lt;/td>
+                    &lt;td>{{=post.categoria}}&lt;/td>
+                &lt;/tr>
+            {{pass}}
+        &lt;/table>
+      </pre>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/logo_fundo_transparente.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Exibindo um post</h2>
+      <h3>Capturando uma noticia por slug</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Controller</h2>
+      <h3>controllers/</h3>
+      <h4>|---- post.py</h4>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="python">
+        def show():
+            post_slug = request.args(0, otherwise=URL('default', 'index'))
+            # atalho para db(db.post.slug == post_slug).select().first()
+            post = db.post(slug=post_slug, publicado=True)
+            if not post:
+                raise HTTP(404)
+            return {'post':post}
+      </pre>
+      <p>http://127.0.0.1:8000/post/show/&lt;slug&gt;</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Controller</h2>
+      <h3>controllers/</h3>
+      <h4>|---- post.py</h4>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="python">
+        @auth.requires_login()
+        def add():
+            form = SQLFORM(db.post)
+            if form.process().accepted:
+                response.flash = T("Inserido com sucesso!")
+            elif form.errors:
+                response.flash = T("Seu formulário possui erros.")
+            return {'form': form}
+      </pre>
+      <p>http://127.0.0.1:8000/post/add</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Controller</h2>
+      <h3>controllers/</h3>
+      <h4>|---- post.py</h4>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="python">
+        def crud():
+            form = SQLFORM.grid(db.post)
+            return {'form': form}
+      </pre>
+      <p>http://127.0.0.1:8000/post/crud</p>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground logoslide" style="background-image: url(images/toolbox.png)">
+        <h2>Ferramentas</h2>
+  </slide>
+
+  <slide class="fill nobackground logoslide" style="background-image: url(images/rocket.png)">
+        <h2>Deploy</h2>
+  </slide>
+
+  <slide class="fill nobackground logoslide" style="background-image: url(images/Slice.png)">
+    <a href="http://www.web2pyslices.com/home">
+        <h2 style="float: right">Dúvidas?!?!</h2>
+    </a>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/logo_fundo_transparente.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>&lt;Obrigado!&gt;</h2>
+      <p>Vamos trocar um dedo de prosa!</p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
