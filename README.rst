@@ -10,6 +10,6 @@ X4GONOW Python
 
 * Link para os slides:
 
-    http://grupythonufla.github.com/slides/
+    http://cassiobotaro.github.com/slides/
 
 ----
