@@ -10,6 +10,10 @@ X4GONOW Python
 
 * Link para os slides:
 
-    http://cassiobotaro.github.com/slides/
+    https://cassiobotaro.github.com/slides/
 
+* Slides no speackerdeck:
+    https://speakerdeck.com/cassiobotaro
 ----
+
+
